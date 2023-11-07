@@ -1,0 +1,62 @@
+function processInput() {
+  rl.question("Enter a command: ", (input) => {
+    if (input.toLowerCase() === commandsEnum.EXIT.toLowerCase()) {
+      commands[5].execute()
+      rl.close();
+    } else {
+      switch (input.toLowerCase()) {
+        case commandsEnum.PALINDROME:
+          console.log("Enter your string:");
+          rl.once("line", (text: string) => {
+            const result = commands[0].execute(text);
+            console.log(`Is it a palindrome? ${result}`);
+            processInput(); // Ask for the next command
+          });
+          break;
+        case commandsEnum.LOWER:
+          console.log("Enter your string:");
+          rl.once("line", (text: string) => {
+            const result = commands[1].execute(text);
+            console.log(`Are all characters lowercase? ${result}`);
+            processInput(); // Ask for the next command
+          });
+          break;
+        case commandsEnum.ARMSTRONG:
+          console.log("Enter your number:");
+          rl.once("line", (text: string) => {
+            const result = commands[2].execute(text);
+            console.log(`Is the number Armstrong? ${result}`);
+            processInput(); // Ask for the next command
+          });
+          break;
+        case commandsEnum.DIGITS:
+          console.log("Enter your number:");
+          rl.once("line", (text: string) => {
+            const result = isDigits(text);
+            console.log(`Are all digits? ${result}`);
+            processInput(); // Ask for the next command
+          });
+          break;
+        case commandsEnum.NATIONALIZE:
+          console.log("Enter your Country :");
+          rl.once("line", (text: string) => {
+            // commands[4].execute(text).then(() => {
+            //   processInput(); // Ask for the next command
+            // });
+          });
+          break;
+        default:
+          console.log("Invalid command. Please enter a valid command.");
+          processInput(); // Ask for the next command
+      }
+    }
+  });
+}
+
+
+// function promptForCommand() {
+//   printTheCommands();
+//   processInput();
+// }
+
+// promptForCommand();
