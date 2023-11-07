@@ -12,18 +12,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getNationalityProbability = exports.isDigits = exports.isArmstrongNumber = exports.isLower = exports.isPalindrome = exports.printTheCommands = void 0;
+exports.getNationalityProbability = exports.isDigits = exports.isArmstrongNumber = exports.isLower = exports.isPalindrome = void 0;
 const axios_1 = __importDefault(require("axios"));
-const printTheCommands = () => {
-    console.log("The available commands are:");
-    console.log("1 - Palindrome - check if the input is a palindrome");
-    console.log("2 - Lower - check if all the characters are lowercase");
-    console.log("3 - Digits - check if the input are digits");
-    console.log("4 - Armstrong - check if the input is an armstrong");
-    console.log("5 - Nationalize - check the nationality probability of a given first name");
-    console.log("6 - Exit - Exit successfully from the application");
-};
-exports.printTheCommands = printTheCommands;
 function isPalindrome(str) {
     // Function to check if a string is a palindrome
     str = str.toLowerCase().replace(/[^a-zA-Z0-9]/g, ""); // Remove non-alphanumeric characters and make it lowercase
