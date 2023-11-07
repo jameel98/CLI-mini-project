@@ -20,9 +20,7 @@ const printTheCommands = () => {
   console.log("2 - Lower - check if all the characters are lowercase");
   console.log("3 - Digits - check if the input are digits");
   console.log("4 - Armstrong - check if the input is an armstrong");
-  console.log(
-    "5 - Nationalize - check the nationality probability of a given first name"
-  );
+  console.log("5 - Nationalize - check the nationality probability of a given first name" );
   console.log("6 - Exit - Exit successfully from the application");
 };
 
